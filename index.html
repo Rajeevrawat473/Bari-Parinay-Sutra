@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>बारी परिणय सूत्र | Bari Parinay Sutra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">ॐ</div>
+    <div><h1>बारी परिणय सूत्र</h1><span>Bari Parinay Sutra</span></div>
+  </div>
+  <nav><a href="#search">रिश्ते खोजें</a><a href="#register">प्रोफाइल बनाएं</a><a href="admin.html">Admin</a></nav>
+</header>
+
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">बारी समाज के लिए सुरक्षित वैवाहिक मंच</p>
+    <h2>अपनी पसंद और <span>स्थान</span> के अनुसार जीवनसाथी खोजें</h2>
+    <p>भारत → राज्य → जिला → तहसील के आधार पर प्रोफाइल खोजें। आपकी निजी contact जानकारी सार्वजनिक नहीं होगी।</p>
+    <div class="hero-actions"><a class="btn primary" href="#search">रिश्ता खोजें</a><a class="btn ghost" href="#register">प्रोफाइल बनाएं</a></div>
+  </div>
+  <div class="hero-card">
+    <div class="mini-icon">♡</div><h3>सम्मान • सुरक्षा • विश्वास</h3>
+    <p>हर नई प्रोफाइल पहले Admin approval के बाद सार्वजनिक होगी।</p>
+  </div>
+</section>
+
+<section id="search" class="section">
+  <div class="section-head"><div><p class="eyebrow">SEARCH PROFILES</p><h2>रिश्ते खोजें</h2></div><span id="resultCount" class="count">0 प्रोफाइल</span></div>
+  <form id="searchForm" class="search-grid">
+    <select id="sGender"><option value="">लड़का या लड़की</option><option value="male">लड़का</option><option value="female">लड़की</option></select>
+    <input id="sState" placeholder="राज्य">
+    <input id="sDistrict" placeholder="जिला">
+    <input id="sTehsil" placeholder="तहसील">
+    <input id="sMinAge" type="number" min="18" max="100" placeholder="न्यूनतम उम्र">
+    <input id="sMaxAge" type="number" min="18" max="100" placeholder="अधिकतम उम्र">
+    <button class="btn primary" type="submit">खोजें</button>
+    <button class="btn light" type="button" id="resetSearch">रीसेट</button>
+  </form>
+  <div id="results" class="cards"><div class="empty">खोज शुरू करने के लिए ऊपर जानकारी भरें।</div></div>
+</section>
+
+<section id="register" class="section alt">
+  <div class="section-head"><div><p class="eyebrow">CREATE PROFILE</p><h2>अपनी प्रोफाइल बनाएं</h2><p>Registration के बाद आपकी प्रोफाइल Admin approval के लिए जाएगी।</p></div></div>
+  <form id="registerForm" class="form-grid">
+    <input name="full_name" required placeholder="पूरा नाम">
+    <select name="gender" required><option value="">लिंग चुनें</option><option value="male">लड़का</option><option value="female">लड़की</option></select>
+    <input name="dob" required type="date" aria-label="जन्म तिथि">
+    <input name="education" placeholder="शिक्षा">
+    <input name="occupation" placeholder="व्यवसाय / नौकरी">
+    <input name="state" required placeholder="राज्य">
+    <input name="district" required placeholder="जिला">
+    <input name="tehsil" required placeholder="तहसील">
+    <input name="email" required type="email" placeholder="ईमेल">
+    <input name="phone" required inputmode="tel" placeholder="मोबाइल नंबर">
+    <input name="password" required type="password" minlength="8" placeholder="पासवर्ड (कम से कम 8 अक्षर)">
+    <input name="photo_url" placeholder="Profile photo URL (optional)">
+    <textarea name="about" class="full" maxlength="1000" placeholder="अपने बारे में संक्षेप में लिखें"></textarea>
+    <label class="check full"><input name="consent" type="checkbox" required> मैं सहमत हूँ कि मेरी प्रोफाइल जानकारी matrimonial search के लिए दिखाई जा सकती है, लेकिन मेरा फोन/ईमेल public profile पर नहीं दिखाया जाएगा।</label>
+    <button class="btn primary full" type="submit">प्रोफाइल बनाएं</button>
+  </form>
+  <p id="registerMsg" class="message"></p>
+</section>
+
+<footer><strong>बारी परिणय सूत्र</strong><span>सुरक्षित और सम्मानजनक matrimonial community platform</span></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
